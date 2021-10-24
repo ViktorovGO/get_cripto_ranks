@@ -101,10 +101,10 @@ def d_f_all(info):   #Вывод рангов 5000 монет
     x[str(info[i]['name'])]=str(info[i]['rank'])
   df=pd.DataFrame([x])
   new_df=df
-  old_df = pd.read_excel('I:\RANK CRYPTO\Ranks_all.xlsx')
+  old_df = pd.read_excel('D:\pyprojects\bitok\Ranks_all.xlsx')
   frames = [old_df, new_df]
   result = pd.concat(frames)
-  result.to_excel("I:\RANK CRYPTO\Ranks_all.xlsx", sheet_name="sheet_1", index=False)
+  result.to_excel("D:\pyprojects\bitok\Ranks_all.xlsx", sheet_name="sheet_1", index=False)
 
 def main():
   global cmc,info
