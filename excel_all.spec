@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['excel_all.py'],
-             pathex=['D:\\pyprojects\\bitok'],
+             pathex=['D:\\pyprojects\\Bitok'],
              binaries=[],
              datas=[],
              hiddenimports=[],

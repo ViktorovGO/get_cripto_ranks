@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['bitok.py'],
-             pathex=['D:\\pyprojects\\bitok'],
+             pathex=['D:\\pyprojects\\Bitok'],
              binaries=[],
              datas=[],
              hiddenimports=[],

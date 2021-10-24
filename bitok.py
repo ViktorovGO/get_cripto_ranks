@@ -4,7 +4,11 @@ from requests import Session
 import secrets
 from pprint import pprint as pp
 import openpyxl
+from datetime import datetime
+current_datetime = datetime.now()
 token='6a38c0ec-4aa7-4aed-99f7-f5dd657aea62'
+y=(str(current_datetime.day),str(current_datetime.month),str(current_datetime.year))
+y=str(".".join(y))
 #/v1/cryptocurrency/map
 class CMC:
   # https://coinmarketcap.com/api/documentation/v1/
@@ -96,15 +100,16 @@ def d_f(info):  #Вывод рангов заданных монет
 
 def d_f_all(info):   #Вывод рангов 5000 монет
   global x
-  x = {str(info[1]['name']): str(info[1]['rank'])}
+  x = {'Date': y}
+  x[str(info[1]['name'])]=str(info[1]['rank'])
   for i in range(1,5000):
     x[str(info[i]['name'])]=str(info[i]['rank'])
   df=pd.DataFrame([x])
   new_df=df
-  old_df = pd.read_excel('D:\pyprojects\bitok\Ranks_all.xlsx')
+  old_df = pd.read_excel('D:\pyprojects\Bitok\Ranks_all.xlsx')
   frames = [old_df, new_df]
   result = pd.concat(frames)
-  result.to_excel("D:\pyprojects\bitok\Ranks_all.xlsx", sheet_name="sheet_1", index=False)
+  result.to_excel("D:\pyprojects\Bitok\Ranks_all.xlsx", sheet_name="sheet_1", index=False)
 
 def main():
   global cmc,info
