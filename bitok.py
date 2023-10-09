@@ -5,8 +5,9 @@ import secrets
 from pprint import pprint as pp
 import openpyxl
 from datetime import datetime
+from decouple import config
 current_datetime = datetime.now()
-token='6a38c0ec-4aa7-4aed-99f7-f5dd657aea62'
+token=config('token')
 y=(str(current_datetime.day),str(current_datetime.month),str(current_datetime.year))
 y=str(".".join(y))
 #/v1/cryptocurrency/map
@@ -106,7 +107,7 @@ def d_f_all(info):   #Вывод рангов 5000 монет
     x[str(info[i]['name'])]=str(info[i]['rank'])
   df=pd.DataFrame([x])
   new_df=df
-  old_df = pd.read_excel('D:\pyprojects\Bitok\Ranks_all.xlsx')
+  old_df = pd.read_excel('D:\pyprojects\Bitok\Ranks_all.xlsx', sheet_name="sheet_1")
   frames = [old_df, new_df]
   result = pd.concat(frames)
   result.to_excel("D:\pyprojects\Bitok\Ranks_all.xlsx", sheet_name="sheet_1", index=False)
@@ -115,6 +116,7 @@ def main():
   global cmc,info
   cmc = CMC(token)
   info = inp()
+  print(info[1])
   if (what == 'ticker_e'):
     d_f(info)
   if (what == 'all_e'):

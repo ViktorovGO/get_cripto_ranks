@@ -1,2 +1,15 @@
 /build
 /venv
+.env
+__pycache__/bitok.cpython-39.pyc
+.idea/.name
+build/bitok/Analysis-00.toc
+build/bitok/bitok.exe
+build/bitok/COLLECT-00.toc
+build/bitok/EXE-00.toc
+build/bitok/PKG-00.pkg
+build/bitok/PYZ-00.pyz
+build/bitok/PYZ-00.toc
+build/bitok/warn-bitok.txt
+build/bitok/xref-bitok.html
+dist/bitok/bitok.exe
