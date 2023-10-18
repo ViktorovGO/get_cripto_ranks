@@ -56,7 +56,7 @@ def inp():
 
   if (what == 'all_e'):  # Вывод рангов всех монет в эксель
     return(cmc.getAllCoins())
-  if (what == 'ticker'):  # Вывод определенной монеты
+  if (what == 'ticker' or what == 'ticker_e'):  # Вывод определенной монеты
     n=int(input('Кол-во тикеров'))
     ticker = [] * n
     a = input('Введите тикер=')
@@ -66,18 +66,6 @@ def inp():
       a = input('Введите тикер=')
 
     pp(cmc.getTicker(",".join(ticker)))
-    return cmc.getTicker(",".join(ticker))
-
-  if (what == 'ticker_e'):  # Вывод рангов в эксель
-    n=int(input('Кол-во тикеров'))
-    ticker = [] * n
-    a = input('Введите тикер=')
-    for i in range(n):
-      ticker.append(a)
-      if (i == (n - 1)): break
-      a = input('Введите тикер=')
-
-
     return cmc.getTicker(",".join(ticker))
 
   if (what == 'rank'):    #вывод ранга
@@ -116,7 +104,6 @@ def main():
   global cmc,info
   cmc = CMC(token)
   info = inp()
-  print(info[1])
   if (what == 'ticker_e'):
     d_f(info)
   if (what == 'all_e'):
