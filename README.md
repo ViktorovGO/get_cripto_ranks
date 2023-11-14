@@ -22,7 +22,7 @@ python -m venv venv
 
 Для Windows:
 ```
-source venv/Scripts/activate
+venv\Scripts\activate.bat
 ```
 
 Для MacOs/Linux:
